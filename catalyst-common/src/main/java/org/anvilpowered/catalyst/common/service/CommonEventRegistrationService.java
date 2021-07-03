@@ -40,11 +40,11 @@ public class CommonEventRegistrationService<TUser, TPlayer, TString, TCommandSou
     @Inject
     private StaffChatListener<TString, TPlayer> staffChatListener;
 
-    @Inject
+    /*@Inject
     private CommonJoinListener<TUser, TString, TPlayer, TCommandSource> joinListener;
 
     @Inject
-    private LeaveListener<TPlayer> leaveListener;
+    private LeaveListener<TPlayer> leaveListener;*/
 
     @Inject
     private DiscordChatListener<TString, TPlayer> discordChatListener;
@@ -61,8 +61,8 @@ public class CommonEventRegistrationService<TUser, TPlayer, TString, TCommandSou
     public void registerEvents() {
         eventService.getEventBus().register(chatListener);
         eventService.getEventBus().register(staffChatListener);
-        eventService.getEventBus().register(joinListener);
-        eventService.getEventBus().register(leaveListener);
+        /*eventService.getEventBus().register(joinListener);
+        eventService.getEventBus().register(leaveListener);*/
         eventService.getEventBus().register(discordChatListener);
         eventService.getEventBus().register(commandListener);
     }

@@ -157,13 +157,13 @@ public class VelocityListener {
             if (!optionalMember.isPresent()) {
                 return;
             }
-            if (flags[0] && registry.getOrDefault(CatalystKeys.JOIN_LISTENER_ENABLED)) {
+            /*if (flags[0] && registry.getOrDefault(CatalystKeys.JOIN_LISTENER_ENABLED)) {
                 broadcastService.broadcast(
                     textService.deserialize(
                         registry.getOrDefault(CatalystKeys.FIRST_JOIN)
                             .replace("%player%", player.getUsername()))
                 );
-            }
+            }*/
             CoreMember<?> coreMember = optionalMember.get();
             if (Anvil.getServiceManager().provide(CoreMemberManager.class).getPrimaryComponent().checkBanned(coreMember)) {
                 player.disconnect(
